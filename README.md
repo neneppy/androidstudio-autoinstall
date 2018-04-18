@@ -4,7 +4,7 @@
 Just type following command:  
 ```
 git clone https://github.com/neneppy/androidstudio-autoinstall.git
-./androidstudio-autoinstall/install.sh
+cd ./androidstudio-autoinstall && chmod +x install.sh && ./install.sh
 ```
   
 ## License
