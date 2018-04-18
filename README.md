@@ -3,7 +3,8 @@
 ## How to use
 Just type following command:  
 ```
-curl -fsSL https://raw.githubusercontent.com/neneppy/androidstudio-autoinstall/master/install.sh | bash
+git clone https://github.com/neneppy/androidstudio-autoinstall.git
+./androidstudio-autoinstall/install.sh
 ```
   
 ## License

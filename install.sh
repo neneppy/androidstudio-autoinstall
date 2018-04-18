@@ -4,7 +4,7 @@
 
 # ask sudo password.
 read -s -p "PASSWORD: " password
-echo "\nProcessing...\n"
+echo "Processing..."
 
 # make tmp directory.
 mkdir tmp
@@ -12,7 +12,7 @@ cd ./tmp
 tmp_dir=`pwd`
 
 # download android-studio binary file from google using wget.
-echo "\nDownloading Android Studio...\n"
+echo "Downloading Android Studio..."
 dl_url=`curl -Ss https://developer.android.com/studio/index.html#linux-bundle | grep -G -o -e "https.*linux\.zip" | grep -m 1 -G -e ".*"`
 wget $dl_url
 zip_url=`echo $dl_url | grep -G -o -e "android-.*zip"`
@@ -40,7 +40,7 @@ home_dir=`cd ~ && pwd`
 # if 64bit kernel, install additional packages.
 # Ubuntu: sudo apt-get install lib32z1 lib32ncurses5 libbz2-1.0:i386 lib32stdc++6
 # Fedora: sudo yum install zlib.i686 ncurses-libs.i686 bzip2-libs.i686
-echo "\nInstalling Additional Packages...\n"
+echo "Installing Additional Packages..."
 if [ "$(which apt-get)" == "/usr/bin/apt-get" ]; then
     #Ubuntu
     echo "$password" | sudo -S apt-get -y install lib32z1 lib32ncurses5 libbz2-1.0:i386 lib32stdc++6
@@ -53,7 +53,7 @@ else
 fi
 
 # remove temp files.
-echo "\nRemoving Temporary Files...\n"
+echo "Removing Temporary Files..."
 cd $tmp_dir/../
 rm -rf tmp
-echo "\nAll done!\n"
+echo "All done!"
