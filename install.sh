@@ -13,7 +13,7 @@ tmp_dir=`pwd`
 
 # download android-studio binary file from google using wget.
 echo "Downloading Android Studio..."
-dl_url=`curl -Ss https://developer.android.com/studio/index.html#linux-bundle | grep -G -o -e "https.*linux\.zip" | grep -m 1 -G -e ".*"`
+dl_url=`curl -Ss https://developer.android.com/studio/ | grep -G -o -e "https.*linux\.zip" | grep -m 1 -G -e ".*"`
 wget $dl_url
 zip_url=`echo $dl_url | grep -G -o -e "android-.*zip"`
 unzip $zip_url
@@ -23,7 +23,7 @@ mv android-studio ~/.android-studio
 cd ~/.android-studio/bin
 cp studio.sh android-studio
 echo "$password" | sudo -S chmod +x android-studio
-echo "$password" | sudo -S ln -s ./android-studio /usr/bin/android-studio
+echo "$password" | sudo -S ln -s ~/.android-studio/bin/android-studio /usr/bin/android-studio
 
 # make application launcher icon.
 home_dir=`cd ~ && pwd`
