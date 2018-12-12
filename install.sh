@@ -1,6 +1,6 @@
 #!/bin/bash
 # Android Studio Auto Installer.
-# Copyright (C) 2018 Neneroid. WTFPL License.
+# Copyright (C) 2018 Neneppy. WTFPL License.
 
 # ask sudo password.
 read -s -p "PASSWORD: " password
@@ -40,6 +40,7 @@ home_dir=`cd ~ && pwd`
 # if 64bit kernel, install additional packages.
 # Ubuntu: sudo apt-get install lib32z1 lib32ncurses5 libbz2-1.0:i386 lib32stdc++6
 # Fedora: sudo yum install zlib.i686 ncurses-libs.i686 bzip2-libs.i686
+# TODO: add processing for detect 32bit/64bit kernel
 echo "Installing Additional Packages..."
 if [ "$(which apt-get)" == "/usr/bin/apt-get" ]; then
     #Ubuntu
